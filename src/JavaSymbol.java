@@ -9,7 +9,6 @@ public class JavaSymbol extends java_cup.runtime.Symbol {
   public JavaSymbol(int type, int line, int column, Object value) {
     this(type, line, column, -1, -1, value);
   }
-
   public JavaSymbol(int type, int line, int column, int left, int right, Object value) {
     super(type, left, right, value);
     this.line = line;

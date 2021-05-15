@@ -250,7 +250,7 @@ SingleCharacter = [^\r\n\'\\]
   {Comment}                      { /* ignore */ }
 
   /* whitespace */
-  {WhiteSpace}                   { /* ignore */ }
+  {WhiteSpace}                   {return symbol(WS);}
 
   /* identifiers */ 
   {Identifier}                   { return symbol(IDENTIFIER, yytext()); }  
