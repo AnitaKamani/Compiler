@@ -164,7 +164,7 @@ SingleCharacter = [^\r\n\'\\]
  [sS][tT][rR][iI][cC][tT][fF][pP]                  { return symbol(STRICTFP); }
  [hH][eE][lL][lL][oO]                              { return symbol(HELLO); }
  [nN][iI][cC][eE]                                  { return symbol(NICE); }
-
+ [wW][hH][eE][rR][eE]                              { return symbol(WHERE); }
   
   /* boolean literals */
  [tT][rR][uU][eE]                                  { return symbol(BOOLEAN_LITERAL, true); }

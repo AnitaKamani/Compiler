@@ -69,6 +69,7 @@ terminal WS; //white space token
 terminal CM; //comment token
 terminal HELLO; //hello token
 terminal NICE; //nice token
+terminal WHERE; //where token
 ///////////////
 
 
