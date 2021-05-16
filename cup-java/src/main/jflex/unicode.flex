@@ -114,6 +114,7 @@ HexDigit        = [0-9a-fA-F]
 %%
 
 <YYINITIAL> {
+
   \\               { even = false; return '\\'; }
   \\ / \\          { even = !even; return '\\'; }
   \\ / "u"         { 
