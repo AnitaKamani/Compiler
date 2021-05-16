@@ -114,61 +114,66 @@ SingleCharacter = [^\r\n\'\\]
 <YYINITIAL> {
 
   /* keywords */
-  "abstract"                     { return symbol(ABSTRACT); }
-  "boolean"                      { return symbol(BOOLEAN); }
-  "break"                        { return symbol(BREAK); }
-  "byte"                         { return symbol(BYTE); }
-  "case"                         { return symbol(CASE); }
-  "catch"                        { return symbol(CATCH); }
-  "char"                         { return symbol(CHAR); }
-  "class"                        { return symbol(CLASS); }
-  "const"                        { return symbol(CONST); }
-  "continue"                     { return symbol(CONTINUE); }
-  "do"                           { return symbol(DO); }
-  "double"                       { return symbol(DOUBLE); }
-  "else"                         { return symbol(ELSE); }
-  "extends"                      { return symbol(EXTENDS); }
-  "final"                        { return symbol(FINAL); }
-  "finally"                      { return symbol(FINALLY); }
-  "float"                        { return symbol(FLOAT); }
-  "for"                          { return symbol(FOR); }
-  "default"                      { return symbol(DEFAULT); }
-  "implements"                   { return symbol(IMPLEMENTS); }
-  "import"                       { return symbol(IMPORT); }
-  "instanceof"                   { return symbol(INSTANCEOF); }
-  "int"                          { return symbol(INT); }
-  "interface"                    { return symbol(INTERFACE); }
-  "long"                         { return symbol(LONG); }
-  "native"                       { return symbol(NATIVE); }
-  "new"                          { return symbol(NEW); }
-  "goto"                         { return symbol(GOTO); }
-  "if"                           { return symbol(IF); }
-  "public"                       { return symbol(PUBLIC); }
-  "short"                        { return symbol(SHORT); }
-  "super"                        { return symbol(SUPER); }
-  "switch"                       { return symbol(SWITCH); }
-  "synchronized"                 { return symbol(SYNCHRONIZED); }
-  "package"                      { return symbol(PACKAGE); }
-  "private"                      { return symbol(PRIVATE); }
-  "protected"                    { return symbol(PROTECTED); }
-  "transient"                    { return symbol(TRANSIENT); }
-  "return"                       { return symbol(RETURN); }
-  "void"                         { return symbol(VOID); }
-  "static"                       { return symbol(STATIC); }
-  "while"                        { return symbol(WHILE); }
-  "this"                         { return symbol(THIS); }
-  "throw"                        { return symbol(THROW); }
-  "throws"                       { return symbol(THROWS); }
-  "try"                          { return symbol(TRY); }
-  "volatile"                     { return symbol(VOLATILE); }
-  "strictfp"                     { return symbol(STRICTFP); }
+ [aA][bB][sS][tT][rR][aA][cC][tT]                  { return symbol(ABSTRACT); }
+ [bB][oO][oO][lL][eE][aA][nN]                      { return symbol(BOOLEAN); }
+ [bB][rR][eE][aA][kK]                              { return symbol(BREAK); }
+ [bB][yY][tT][eE]                                  { return symbol(BYTE); }
+ [cC][aA][sS][eE]                                  { return symbol(CASE); }
+ [cC][aA][tT][cC][hH]                              { return symbol(CATCH); }
+ [cC][hH][aA][rR]                                  { return symbol(CHAR); }
+ [cC][lL][aA][sS][sS]                              { return symbol(CLASS); }
+ [cC][oO][nN][sS][tT]                              { return symbol(CONST); }
+ [cC][oO][nN][tT][iI][nN][uU][eE]                  { return symbol(CONTINUE); }
+ [dD][oO]                                          { return symbol(DO); }
+ [dD][oO][uU][bB][lL][eE]                          { return symbol(DOUBLE); }
+ [eE][lL][sS][eE]                                  { return symbol(ELSE); }
+ [eE][xX][tT][eE][nN][dD][sS]                      { return symbol(EXTENDS); }
+ [fF][iI][nN][aA][lL]                              { return symbol(FINAL); }
+ [fF][iI][nN][aA][lL][lL][yY]                      { return symbol(FINALLY); }
+ [fF][lL][oO][aA][tT]                              { return symbol(FLOAT); }
+ [fF][oO][rR]                                      { return symbol(FOR); }
+ [dD][eE][fF][aA][uU][lL][tT]                      { return symbol(DEFAULT); }
+ [iI][mM][pP][lL][eE][mM][eE][nN][tT][sS]          { return symbol(IMPLEMENTS); }
+ [iI][mM][pP][oO][rR][tT]                          { return symbol(IMPORT); }
+ [iI][nN][sS][tT][aA][nN][cC][eE][oO][fF]          { return symbol(INSTANCEOF); }
+ [iI][nN][tT]                                      { return symbol(INT); }
+ [iI][nN][tT][eE][rR][fF][aA][cC][eE]              { return symbol(INTERFACE); }
+ [lL][oO][nN][gG]                                  { return symbol(LONG); }
+ [nN][aA][tT][iI][vV][eE]                          { return symbol(NATIVE); }
+ [nN][eE][wW]                                      { return symbol(NEW); }
+ [gG][oO][tT][oO]                                  { return symbol(GOTO); }
+ [iI][fF]                                          { return symbol(IF); }
+ [pP][uU][bB][lL][iI][cC]                          { return symbol(PUBLIC); }
+ [sS][hH][oO][rR][tT]                              { return symbol(SHORT); }
+ [sS][uU][pP][eE][rR]                              { return symbol(SUPER); }
+ [sS][wW][iI][tT][cC][hH]                          { return symbol(SWITCH); }
+ [sS][yY][nN][cC][hH][rR][oO][nN][iI][zZ][eE][dD]  { return symbol(SYNCHRONIZED); }
+ [pP][aA][cC][kK][aA][gG][eE]                      { return symbol(PACKAGE); }
+ [pP][rR][iI][vV][aA][tT][eE]                      { return symbol(PRIVATE); }
+ [pP][rR][oO][tT][eE][cC][tT][eE][dD]              { return symbol(PROTECTED); }
+ [tT][rR][aA][nN][sS][iI][eE][nN][tT]              { return symbol(TRANSIENT); }
+ [rR][eE][tT][uU][rR][nN]                          { return symbol(RETURN); }
+ [vV][oO][iI][dD]                                  { return symbol(VOID); }
+ [sS][tT][aA][tT][iI][cC]                          { return symbol(STATIC); }
+ [wW][hH][iI][lL][eE]                              { return symbol(WHILE); }
+ [tT][hH][iI][sS]                                  { return symbol(THIS); }
+ [tT][hH][rR][oO][wW]                              { return symbol(THROW); }
+ [tT][hH][rR][oO][wW][sS]                          { return symbol(THROWS); }
+ [tT][rR][yY]                                      { return symbol(TRY); }
+ [vV][oO][lL][aA][tT][iI][lL][eE]                  { return symbol(VOLATILE); }
+ [sS][tT][rR][iI][cC][tT][fF][pP]                  { return symbol(STRICTFP); }
+ [hH][eE][lL][lL][oO]                              { return symbol(HELLO); }
+ [nN][iI][cC][eE]                                  { return symbol(NICE); }
+
   
   /* boolean literals */
-  "true"                         { return symbol(BOOLEAN_LITERAL, true); }
-  "false"                        { return symbol(BOOLEAN_LITERAL, false); }
+ [tT][rR][uU][eE]                                  { return symbol(BOOLEAN_LITERAL, true); }
+ [fF][aA][lL][sS][eE]                              { return symbol(BOOLEAN_LITERAL, false); }
+
+  
   
   /* null literal */
-  "null"                         { return symbol(NULL_LITERAL); }
+ [nN][uU][lL][lL]                                  { return symbol(NULL_LITERAL); }
   
   
   /* separators */
@@ -247,10 +252,10 @@ SingleCharacter = [^\r\n\'\\]
   {DoubleLiteral}[dD]            { return symbol(FLOATING_POINT_LITERAL, new Double(yytext().substring(0,yylength()-1))); }
   
   /* comments */
-  {Comment}                      { /* ignore */ }
+  {Comment}                      { return symbol(CM); }
 
   /* whitespace */
-  {WhiteSpace}                   {return symbol(WS);}
+  {WhiteSpace}                   { return symbol(WS); }
 
   /* identifiers */ 
   {Identifier}                   { return symbol(IDENTIFIER, yytext()); }  
