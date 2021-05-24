@@ -175,6 +175,10 @@ SingleCharacter = [^\r\n\'\\]
   "hello"                        { return symbol(HELLO); }
   "nice"                         { return symbol(NICE); }
   "where"                        { return symbol(WHERE); }
+  "print"                        { return symbol(PRINT); }
+  
+  
+  
   
   /* boolean literals */
   "true"                         { return symbol(BOOLEAN_LITERAL, true); }
@@ -264,7 +268,7 @@ SingleCharacter = [^\r\n\'\\]
   {Comment}                      { return symbol(CM); }
 
   /* whitespace */
-  {WhiteSpace}                   { return symbol(WS); }
+  {WhiteSpace}                   { /* ignore */  }
 
   /* identifiers */ 
   {Identifier}                   { return symbol(IDENTIFIER, yytext()); }  

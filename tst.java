@@ -1,9 +1,5 @@
-WhIlE  
-If
-FoR
-NicE
-[]
-//dfsdf
-/*dfsf*/
-HeLlo
-WhEre
+public class TSt_sym {
+	public static void main(String[] args) {
+		public;
+	}
+}

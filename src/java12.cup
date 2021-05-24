@@ -70,6 +70,8 @@ terminal CM; //comment token
 terminal HELLO; //hello token
 terminal NICE; //nice token
 terminal WHERE; //where token
+//
+terminal PRINT;//print_sth// used as a key word to print "HI THERE"
 ///////////////
 
 
@@ -238,6 +240,22 @@ non terminal left_hand_side;
 non terminal assignment_operator;
 non terminal expression_opt, expression;
 non terminal constant_expression;
+
+
+
+
+
+
+
+/////////////////
+non terminal keyword_statement;// a statement used for keywords
+non terminal print_sth; 
+
+///////////////////
+
+
+
+
 
 
 start with goal;
@@ -510,7 +528,7 @@ interface_member_declaration ::=
 	|	abstract_method_declaration
 	|	class_declaration
 	|	interface_declaration
-  | SEMICOLON
+    | SEMICOLON
 	;
 constant_declaration ::=
 		field_declaration
@@ -560,6 +578,7 @@ statement ::=	statement_without_trailing_substatement
 	|	if_then_else_statement
 	|	while_statement
 	|	for_statement
+	|   keyword_statement  SEMICOLON
 	;
 statement_no_short_if ::=
 		statement_without_trailing_substatement
@@ -673,7 +692,7 @@ statement_expression_list ::=
 
 identifier_opt ::= 
 	|	IDENTIFIER
-	;
+ 	;
 
 break_statement ::=
 		BREAK identifier_opt SEMICOLON
@@ -895,4 +914,20 @@ expression ::=	assignment_expression
 	;
 constant_expression ::=
 		expression
+	;
+	
+	
+	
+	
+	
+	
+	
+	
+//////////
+keyword_statement ::=
+	print_sth
+	;
+
+print_sth ::=
+	PRINT
 	;
