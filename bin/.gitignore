@@ -2,3 +2,6 @@
 /parser.class
 /sym.class
 /Scanner.class
+/JavaParser.class
+/TestLexer.class
+/UnicodeEscapes.class
