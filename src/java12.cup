@@ -82,6 +82,9 @@ terminal CM; //comment token
 terminal HELLO; //hello token
 terminal NICE; //nice token
 terminal WHERE; //where token
+terminal BEGIN; //BEGIN token
+terminal END; //END token
+
 //
 terminal PRINT;//print_stmt// a keyword to print "HI THERE"
 terminal CLOCK;//clock_stmt// a keyword to print clock
@@ -578,6 +581,7 @@ variable_initializers ::=
 
 // 19.11) Blocks and Statements
 block ::=	LBRACE block_statements_opt RBRACE
+	| 	WHERE BEGIN block_statements_opt END
 	;
 block_statements_opt ::=
 	|	block_statements

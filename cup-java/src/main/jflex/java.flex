@@ -186,6 +186,9 @@ SingleCharacter = [^\r\n\'\\]
   "location"                     { return symbol(LOCATION); }
   "username"                     { return symbol(USERNAME); }
   "os"                           { return symbol(OS); }
+  "where"                        { return symbol(WHERE); }
+  "begin"                        { return symbol(BEGIN); }
+  "end"                          { return symbol(END); }
   
   
   
