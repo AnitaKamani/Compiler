@@ -4,7 +4,7 @@
 //----------------------------------------------------
 
 /** CUP generated class containing symbol constants. */
-public interface sym {
+public class sym {
   /* terminals */
   public static final int SHORT = 10;
   public static final int IDENTIFIER = 104;

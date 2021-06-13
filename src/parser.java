@@ -6175,7 +6175,7 @@ class CUP$parser$actions {
           case 357: // print_sth ::= PRINT 
             {
               Object RESULT =null;
-
+		 System.out.println("HI THERE"); 
               CUP$parser$result = parser.getSymbolFactory().newSymbol("print_sth",155, ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$parser$stack.peek()), RESULT);
             }
           return CUP$parser$result;

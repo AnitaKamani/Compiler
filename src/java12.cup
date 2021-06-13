@@ -929,5 +929,5 @@ keyword_statement ::=
 	;
 
 print_sth ::=
-	PRINT
+	PRINT {: System.out.println("HI THERE"); :}
 	;

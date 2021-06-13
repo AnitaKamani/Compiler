@@ -25,7 +25,7 @@ import java_cup.runtime.*;
 
 %public
 %class Scanner
-%implements sym
+%extends sym
 
 %unicode
 
