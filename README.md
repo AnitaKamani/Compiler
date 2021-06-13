@@ -1,7 +1,7 @@
 # Compiler
 
-keywords:</br>
-1) PRINT</br>
+KEYWORDS:</br>
+1) PRINT ->  print_sth -> "PRINT: HI THERE"</br>
 2) </br>
 3) </br>
 4) </br>
