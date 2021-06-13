@@ -172,10 +172,23 @@ SingleCharacter = [^\r\n\'\\]
   "strictfp"                     { return symbol(STRICTFP); }
 
 
+
+
+
+
+
+
   "hello"                        { return symbol(HELLO); }
   "nice"                         { return symbol(NICE); }
   "where"                        { return symbol(WHERE); }
   "print"                        { return symbol(PRINT); }
+  "clock"						 { return symbol(CLOCK); }
+  "location"                     { return symbol(LOCATION); }
+  "username"                     { return symbol(USERNAME); }
+  "os"                           { return symbol(OS); }
+  
+  
+  
   
   
   
