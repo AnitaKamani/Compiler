@@ -70,6 +70,12 @@ parser code  {:
 
 
 
+
+
+
+
+
+
 ////////////////
 terminal WS; //white space token
 terminal CM; //comment token
@@ -77,24 +83,27 @@ terminal HELLO; //hello token
 terminal NICE; //nice token
 terminal WHERE; //where token
 //
-terminal PRINT;//print_stmt// used as a key word to print "HI THERE"
-terminal CLOCK;//clock_stmt// used as a key word to print "HI THERE"
-terminal LOCATION;//location_stmt// used as a key word to print "HI THERE"
-terminal USERNAME;//username_stmt// used as a key word to print "HI THERE"
-terminal OS;//os_stmt// used as a key word to print "HI THERE"
+terminal PRINT;//print_stmt// a keyword to print "HI THERE"
+terminal CLOCK;//clock_stmt// a keyword to print clock
+terminal LOCATION;//location_stmt// a keyword to print location
+terminal USERNAME;//username_stmt// a keyword to print username
+terminal OS;//os_stmt// a keyword to print os name and virsion
 ///////////////
 
 
 
 /////////////////
 non terminal keyword_statement;// a statement used for keywords
-non terminal print_stmt; 
-non terminal clock_stmt; 
-non terminal location_stmt; 
-non terminal username_stmt; 
-non terminal os_stmt; 
+non terminal print_stmt; // a statement used for PRINT keyword
+non terminal clock_stmt;  // a statement used for CLOCK keyword
+non terminal location_stmt;  // a statement used for LOCATION keyword
+non terminal username_stmt;  // a statement used for USERNAME keyword
+non terminal os_stmt;  // a statement used for OS keyword
 
 ///////////////////
+
+
+
 
 
 
@@ -941,11 +950,32 @@ constant_expression ::=
 	
 	
 	
+	
+	
+	
 //////////
 keyword_statement ::=
-	print_stmt
+	 	print_stmt
+	|	clock_stmt
+	|	location_stmt
+	|	username_stmt
+	|	os_stmt
 	;
-
+	
 print_stmt ::=
-	PRINT {: System.out.println("HI THERE"); :}
+	PRINT {: System.out.println("PRINT: HI THERE"); :}
+	;
+clock_stmt ::=
+	CLOCK {:String timeStamp = new java.text.SimpleDateFormat("HH:mm:ss")
+				.format(java.util.Calendar.getInstance().getTime());
+			System.out.println("CLOCK: "+timeStamp);:}
+	;
+location_stmt ::=
+	LOCATION {: System.out.println("LOCATION: "+java.util.TimeZone.getDefault().getID()); :}
+	;
+username_stmt ::=
+	USERNAME {: System.out.println("USERNAME: " + System.getProperty("user.name")); :}
+	;
+os_stmt ::=
+	OS {: System.out.println("OS: " + System.getProperty("os.name") +": "+ System.getProperty("os.version")); :}
 	;
