@@ -13,7 +13,7 @@ terminal -> non-terminal -> action
 
 
 
-STATEMENTS:
+NEW LOOP STATEMENTS:
 
 these two statemnt added (during as while and fur as for)
 during x==4 where<
