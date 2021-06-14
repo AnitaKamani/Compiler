@@ -81,10 +81,14 @@ terminal WS; //white space token
 terminal CM; //comment token
 terminal HELLO; //hello token
 terminal NICE; //nice token
+///////////////
+terminal FUR;//FUR token used for the requested for function
+terminal DURING;//DURING token used for the requested while function
 terminal WHERE; //where token
 terminal BEGIN; //BEGIN token
 terminal END; //END token
-
+terminal UNTIL;//UNTIL token
+//
 //
 terminal PRINT;//print_stmt// a keyword to print "HI THERE"
 terminal CLOCK;//clock_stmt// a keyword to print clock
@@ -96,14 +100,21 @@ terminal OS;//os_stmt// a keyword to print os name and virsion
 
 
 /////////////////
+non terminal my_statement;// a statemnt used for declaring project things
 non terminal keyword_statement;// a statement used for keywords
 non terminal print_stmt; // a statement used for PRINT keyword
 non terminal clock_stmt;  // a statement used for CLOCK keyword
 non terminal location_stmt;  // a statement used for LOCATION keyword
 non terminal username_stmt;  // a statement used for USERNAME keyword
 non terminal os_stmt;  // a statement used for OS keyword
-
+//
+//
+non terminal fur_stmt; // a statement used for fur token
+non terminal during_stmt; // a statement used for during token
 ///////////////////
+
+
+
 
 
 
@@ -581,8 +592,8 @@ variable_initializers ::=
 
 // 19.11) Blocks and Statements
 block ::=	LBRACE block_statements_opt RBRACE
-	| 	WHERE BEGIN block_statements_opt END
 	;
+
 block_statements_opt ::=
 	|	block_statements
 	;
@@ -609,7 +620,7 @@ statement ::=	statement_without_trailing_substatement
 	|	if_then_else_statement
 	|	while_statement
 	|	for_statement
-	|   keyword_statement  SEMICOLON
+	|   my_statement
 	;
 statement_no_short_if ::=
 		statement_without_trailing_substatement
@@ -957,6 +968,17 @@ constant_expression ::=
 	
 	
 	
+	
+	
+	
+//////////
+my_statement ::=
+		keyword_statement  SEMICOLON
+	|	during_stmt
+	|	fur_stmt
+	;
+
+////////////////////
 //////////
 keyword_statement ::=
 	 	print_stmt
@@ -967,19 +989,28 @@ keyword_statement ::=
 	;
 	
 print_stmt ::=
-	PRINT {: System.out.println("PRINT: HI THERE"); :}
+		PRINT {: System.out.println("PRINT: HI THERE"); :}
 	;
 clock_stmt ::=
-	CLOCK {:String timeStamp = new java.text.SimpleDateFormat("HH:mm:ss")
+		CLOCK {:String timeStamp = new java.text.SimpleDateFormat("HH:mm:ss")
 				.format(java.util.Calendar.getInstance().getTime());
 			System.out.println("CLOCK: "+timeStamp);:}
 	;
 location_stmt ::=
-	LOCATION {: System.out.println("LOCATION: "+java.util.TimeZone.getDefault().getID()); :}
+		LOCATION {: System.out.println("LOCATION: "+java.util.TimeZone.getDefault().getID()); :}
 	;
 username_stmt ::=
-	USERNAME {: System.out.println("USERNAME: " + System.getProperty("user.name")); :}
+		USERNAME {: System.out.println("USERNAME: " + System.getProperty("user.name")); :}
 	;
 os_stmt ::=
-	OS {: System.out.println("OS: " + System.getProperty("os.name") +": "+ System.getProperty("os.version")); :}
+		OS {: System.out.println("OS: " + System.getProperty("os.name") +": "+ System.getProperty("os.version")); :}
+	;
+	
+/////////////
+/////////////
+during_stmt ::=
+		DURING conditional_expression WHERE BEGIN statement END
+	;
+fur_stmt ::=
+		FUR assignment UNTIL unary_expression WHERE BEGIN statement END
 	;

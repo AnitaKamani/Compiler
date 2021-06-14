@@ -178,6 +178,10 @@ SingleCharacter = [^\r\n\'\\]
 
 
 
+
+
+
+
   "hello"                        { return symbol(HELLO); }
   "nice"                         { return symbol(NICE); }
   "where"                        { return symbol(WHERE); }
@@ -186,9 +190,18 @@ SingleCharacter = [^\r\n\'\\]
   "location"                     { return symbol(LOCATION); }
   "username"                     { return symbol(USERNAME); }
   "os"                           { return symbol(OS); }
+  
+  "during"                       { return symbol(DURING); }
+  "fur"                          { return symbol(FUR); }
   "where"                        { return symbol(WHERE); }
   "begin"                        { return symbol(BEGIN); }
   "end"                          { return symbol(END); }
+  "until"                        { return symbol(UNTIL); }
+  
+  
+  
+  
+  
   
   
   

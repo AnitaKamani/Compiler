@@ -1,14 +1,13 @@
-
 public class TSt_sym {
 	public static void main(String[] args) {
-		for (int i = 3; i < 4; i++) where 
-		begin
-			print;
-		end
-		
-		if (4<5) where
-		begin
-			clock;
-		end
+		during x==4 where
+			begin
+				print;
+			end
+				
+		fur x=-3 until 0 where
+			begin
+				clock;
+			end
 	}
 }
