@@ -1,4 +1,10 @@
+/JavaParser.class
+/JavaSymbol.class
+/Scanner.class
+/TSt_sym.class
+/TestLexer.class
+/UnicodeEscapes.class
+/java12.cup
 /parser$CUP$parser$actions.class
 /parser.class
 /sym.class
-/Scanner.class
