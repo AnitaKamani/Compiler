@@ -1,13 +1,12 @@
-public class TSt_sym {
-	public static void main(String[] args) {
-		during x==4 where
-			begin
-				print;
-			end
-				
-		fur x=-3 until 0 where
-			begin
-				clock;
-			end
-	}
+Public clASS test {
+  PubLic sTATIc VOID MaIN(STriNG[] ArGS) {
+   
+	fUR I = 8 UntiL 12 WHerE
+    bEGiN
+    end
+    
+    dUrIng i < u wheRE
+    bEGIN
+    eNd
+  }
 }

@@ -1009,8 +1009,8 @@ os_stmt ::=
 /////////////
 /////////////
 during_stmt ::=
-		DURING conditional_expression WHERE BEGIN statement END
+		DURING conditional_expression WHERE BEGIN block_statements_opt END
 	;
 fur_stmt ::=
-		FUR assignment UNTIL unary_expression WHERE BEGIN statement END
+		FUR assignment UNTIL unary_expression WHERE BEGIN block_statements_opt END
 	;

@@ -297,7 +297,7 @@ SingleCharacter = [^\r\n\'\\]
   {Comment}                      { return symbol(CM); }
 
   /* whitespace */
-  {WhiteSpace}                   { /* ignore */  }
+  {WhiteSpace}                   { /*ignore*/  }
 
   /* identifiers */ 
   {Identifier}                   { return symbol(IDENTIFIER, yytext()); }  
